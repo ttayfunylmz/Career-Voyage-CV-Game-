@@ -1,0 +1,18 @@
+{
+    "name": "OccaSoftware.OutlineObjects.Editor",
+    "rootNamespace": "OccaSoftware.OutlineObjects.Editor",
+    "references": [
+        "GUID:95628b3c8926c2b4eaffb8710d8f10f9"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
