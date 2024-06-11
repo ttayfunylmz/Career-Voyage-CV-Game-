@@ -29,4 +29,5 @@ MonoBehaviour:
   steerAngle: 20
   frontWheelsGripFactor: 0.8
   rearWheelsGripFactor: 0.9
+  flipTorque: 5000
   airResistance: 5

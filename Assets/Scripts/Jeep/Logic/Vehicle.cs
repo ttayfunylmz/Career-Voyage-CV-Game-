@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 namespace ArcadeVehicleController
@@ -19,7 +20,13 @@ namespace ArcadeVehicleController
         private static readonly Wheel[] frontWheels = new Wheel[] { Wheel.FrontLeft, Wheel.FrontRight };
         private static readonly Wheel[] backWheels = new Wheel[] { Wheel.BackLeft, Wheel.BackRight };
 
+        [Header("References")]
         [SerializeField] private VehicleSettings vehicleSettings;
+
+        [Header("Settings")]
+        [SerializeField] private float animationDuration = 1f;
+        [SerializeField] private float upwardMovementDistance = 2f;
+        [SerializeField] private Ease animationEase;
 
         private Transform vehicleTransform;
         private BoxCollider vehicleCollider;
@@ -28,6 +35,8 @@ namespace ArcadeVehicleController
 
         private float steerInput;
         private float accelerateInput;
+
+        private bool isFlipping;
 
         public VehicleSettings Settings => vehicleSettings;
         public Vector3 Forward => vehicleTransform.forward;
@@ -43,6 +52,14 @@ namespace ArcadeVehicleController
             foreach (Wheel wheel in wheels)
             {
                 springDatas.Add(wheel, new());
+            }
+        }
+
+        private void Update() 
+        {
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                FixTheCar();
             }
         }
 
@@ -331,6 +348,33 @@ namespace ArcadeVehicleController
         private void UpdateAirResistance()
         {
             vehicleRigidbody.AddForce(vehicleCollider.size.magnitude * vehicleSettings.AirResistance * -vehicleRigidbody.velocity);
+        }
+
+        private void FixTheCar()
+        {
+            if (isFlipping) { return; }
+
+            vehicleCollider.enabled = false;
+            vehicleRigidbody.useGravity = false;
+            vehicleRigidbody.isKinematic = true;
+            isFlipping = true;
+
+            transform.DOMove(new Vector3(transform.position.x, transform.position.y + upwardMovementDistance, transform.position.z), animationDuration)
+                .SetEase(animationEase)
+                .OnComplete(() =>
+                {
+                    transform.DORotate(new Vector3(0f, transform.eulerAngles.y, 0f), animationDuration)
+                            .SetEase(animationEase).SetUpdate(UpdateType.Fixed, false)
+                            .OnComplete(() =>
+                            {
+                                DOTween.KillAll();
+                                vehicleCollider.enabled = true;
+                                vehicleRigidbody.useGravity = true;
+                                vehicleRigidbody.isKinematic = false;
+                                isFlipping = false;
+                            });
+                })
+                .SetUpdate(UpdateType.Fixed, false);
         }
 
 #if UNITY_EDITOR

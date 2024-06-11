@@ -60,7 +60,7 @@ namespace ArcadeVehicleController
         public float SteerAngle => steerAngle;
         public float FrontWheelsGripFactor => frontWheelsGripFactor;
         public float RearWheelsGripFactor => rearWheelsGripFactor;
-        
+
         public float AirResistance => airResistance;
     }
 }
