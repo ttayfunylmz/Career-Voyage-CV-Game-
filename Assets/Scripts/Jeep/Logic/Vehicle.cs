@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -20,6 +21,8 @@ namespace ArcadeVehicleController
         private static readonly Wheel[] frontWheels = new Wheel[] { Wheel.FrontLeft, Wheel.FrontRight };
         private static readonly Wheel[] backWheels = new Wheel[] { Wheel.BackLeft, Wheel.BackRight };
 
+        public event Action OnVehicleFix;
+
         [Header("References")]
         [SerializeField] private VehicleSettings vehicleSettings;
 
@@ -27,6 +30,7 @@ namespace ArcadeVehicleController
         [SerializeField] private float animationDuration = 1f;
         [SerializeField] private float upwardMovementDistance = 2f;
         [SerializeField] private Ease animationEase;
+        [SerializeField] private bool isFlipping;
 
         private Transform vehicleTransform;
         private BoxCollider vehicleCollider;
@@ -36,7 +40,6 @@ namespace ArcadeVehicleController
         private float steerInput;
         private float accelerateInput;
 
-        private bool isFlipping;
 
         public VehicleSettings Settings => vehicleSettings;
         public Vector3 Forward => vehicleTransform.forward;
@@ -59,7 +62,7 @@ namespace ArcadeVehicleController
         {
             if(Input.GetKeyDown(KeyCode.R))
             {
-                FixTheCar();
+                FixTheVehicle();
             }
         }
 
@@ -350,7 +353,7 @@ namespace ArcadeVehicleController
             vehicleRigidbody.AddForce(vehicleCollider.size.magnitude * vehicleSettings.AirResistance * -vehicleRigidbody.velocity);
         }
 
-        private void FixTheCar()
+        private void FixTheVehicle()
         {
             if (isFlipping) { return; }
 
@@ -371,10 +374,21 @@ namespace ArcadeVehicleController
                                 vehicleCollider.enabled = true;
                                 vehicleRigidbody.useGravity = true;
                                 vehicleRigidbody.isKinematic = false;
-                                isFlipping = false;
+                                // isFlipping = false;
+                                OnVehicleFix?.Invoke();
                             });
                 })
                 .SetUpdate(UpdateType.Fixed, false);
+        }
+
+        public void SetIsFlipping(bool value)
+        {
+            isFlipping = value;
+        }
+
+        public bool GetIsFlipping()
+        {
+            return isFlipping;
         }
 
 #if UNITY_EDITOR
