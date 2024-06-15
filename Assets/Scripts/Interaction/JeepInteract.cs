@@ -9,6 +9,7 @@ public class JeepInteract : MonoBehaviour
         {
             IInteractable interactable = GetInteractableObject();
             interactable?.Interact();
+            AudioManager.Instance.Play(Consts.Sounds.KEYBOARD_CLICK_SOUND);
         }
     }
 

@@ -374,7 +374,6 @@ namespace ArcadeVehicleController
                                 vehicleCollider.enabled = true;
                                 vehicleRigidbody.useGravity = true;
                                 vehicleRigidbody.isKinematic = false;
-                                // isFlipping = false;
                                 OnVehicleFix?.Invoke();
                             });
                 })

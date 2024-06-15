@@ -20,6 +20,7 @@ public class CageInteractable : MonoBehaviour, IInteractable
 
     private void AnimateFence()
     {
+        AudioManager.Instance.Play(Consts.Sounds.FENCE_OPENING_SOUND);
         fenceParent.DORotate(targetRotation, animationDuration);
     }
 

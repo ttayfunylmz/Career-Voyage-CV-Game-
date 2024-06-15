@@ -89,6 +89,7 @@ public class TutorialUI : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.H))
         {
             hImage.sprite = hClickSprite;
+            AudioManager.Instance.Play(Consts.Sounds.HORN_SOUND);
         }
 
         if(Input.GetKeyUp(KeyCode.H))

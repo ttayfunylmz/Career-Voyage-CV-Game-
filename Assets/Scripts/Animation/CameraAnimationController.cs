@@ -35,6 +35,8 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
         firstCameraPosition = mainCamera.transform.position;
         firstCameraRotation = mainCamera.transform.rotation.eulerAngles;
 
+        AudioManager.Instance.Play(Consts.Sounds.CAMERA_TRANSITION_SOUND);
+
         mainCamera.transform.DOMove(previousTargetTransform.position, firstAnimationDuration).SetEase(Ease.Linear).OnComplete(() =>
         {
             mainCamera.transform.DOMove(targetTransform.position, animationDuration).SetEase(animationEase);

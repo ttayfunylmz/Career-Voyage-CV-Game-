@@ -15,6 +15,7 @@ public class LinkManager : MonoBehaviour
 
     private void OpenLink()
     {
+        AudioManager.Instance.Play(Consts.Sounds.BUTTON_CLICK_SOUND);
         Application.OpenURL(link);
     }
 }

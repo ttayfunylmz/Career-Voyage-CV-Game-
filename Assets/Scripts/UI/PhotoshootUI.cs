@@ -34,10 +34,11 @@ public class PhotoshootUI : MonoBehaviour
         if (!isPhotoshootInProgress)
         {
             isPhotoshootInProgress = true;
-                photoshootImage.DOFade(1f, fadeInDuration).OnComplete(() =>
-                {
-                    photoshootImage.DOFade(0f, fadeOutDuration);
-                });
+            photoshootImage.DOFade(1f, fadeInDuration).OnComplete(() =>
+            {
+                AudioManager.Instance.Play(Consts.Sounds.PHOTOSHOOT_SOUND);
+                photoshootImage.DOFade(0f, fadeOutDuration);
+            });
             canvasGroup.DOFade(1f, fadeDuration).OnComplete(() =>
             {
                 Time.timeScale = 0f;

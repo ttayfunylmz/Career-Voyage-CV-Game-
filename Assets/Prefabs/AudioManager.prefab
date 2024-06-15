@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1389378071544197376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8476641656166527832}
+  - component: {fileID: 536317427979391940}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8476641656166527832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389378071544197376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &536317427979391940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389378071544197376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14fdda63f2288fe47a7f02afe91803ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sounds:
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 54234e22376fecc49915aae23a28852f, type: 3}
+    Name: ButtonClickSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 32c089096ffbf7f4cb349e721bd28b06, type: 3}
+    Name: ButtonHoverSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: fa9b55a8b56589f4199621553b4cfff9, type: 3}
+    Name: CameraTransitionSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: b7acc121f729edb4290e06feba723c8c, type: 3}
+    Name: CarEngine_LoopSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: acc0c59a2e35fbf41acee691e0d64e41, type: 3}
+    Name: CarEngine_StartSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: f71422f82a31d3240a2ac5c369584308, type: 3}
+    Name: CarEngine_StopSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: e1533733066a6134281e14cbd7582c91, type: 3}
+    Name: ConfettiSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 9dbee2dfff99e2d4ebb81457775ba326, type: 3}
+    Name: FenceOpeningSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 11c8b772d85e10d41b437de88ff7219c, type: 3}
+    Name: HornSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 2af048b0f1e97ff42a4a2333723a3ddd, type: 3}
+    Name: KeyboardClickSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 8f75d4aceafb8d1479d953bcbf508f45, type: 3}
+    Name: PhotoShootSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0ecf3fc7fe2b1d743a5873495cbfb02e, type: 3}
+    Name: BrickSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 0650d74a30410584d85c6564a3d88481, type: 3}
+    Name: WhistleSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
