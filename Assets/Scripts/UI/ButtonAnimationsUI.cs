@@ -10,19 +10,12 @@ public class ButtonAnimationsUI : MonoBehaviour
     [SerializeField] private float shakeDuration;
 
     private Button _button;
-    private RectTransform _rectTransform;
 
     private void Awake() 
     {
         _button = GetComponent<Button>();
-        _rectTransform = GetComponent<RectTransform>();
 
         _button.onClick.AddListener(OnButtonClick);    
-    }
-
-    private void Start() 
-    {
-        // StartCoroutine(AnimateButton());  
     }
 
     private void OnButtonClick()
@@ -34,9 +27,4 @@ public class ButtonAnimationsUI : MonoBehaviour
     {
         Application.OpenURL(link);
     }
-
-    // private IEnumerator AnimateButton()
-    // {
-        
-    // }
 }
