@@ -94,7 +94,7 @@ MonoBehaviour:
     Loop: 0
     playOnAwake: 0
   - Source: {fileID: 0}
-    AudioClip: {fileID: 8300000, guid: e1533733066a6134281e14cbd7582c91, type: 3}
+    AudioClip: {fileID: 8300000, guid: adc794540d5285f47b5e4d8c06348698, type: 3}
     Name: ConfettiSound
     Volume: 1
     Pitch: 1

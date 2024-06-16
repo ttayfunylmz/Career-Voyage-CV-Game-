@@ -11,6 +11,7 @@ public class Consts
         public const string PHOTOSHOOT_AREA = "PhotoshootArea";
         public const string RIGHT_GOAL = "RightGoal";
         public const string LEFT_GOAL = "LeftGoal";
+        public const string OUTSIDE_TRIGGER = "OutsideTrigger";
     }
 
     public struct Sounds

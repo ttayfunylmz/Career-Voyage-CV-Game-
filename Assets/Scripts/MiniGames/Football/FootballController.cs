@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -25,6 +26,12 @@ public class FootballController : MonoBehaviour
     {
         FootballTriggerController.Instance.OnLeftGoalEntered += OnLeftGoalEntered;
         FootballTriggerController.Instance.OnRightGoalEntered += OnRightGoalEntered;
+        FootballTriggerController.Instance.OnOutsideTriggered += OnOutsideTriggered;
+    }
+
+    private void OnOutsideTriggered()
+    {
+        StartCoroutine(ResetFootball());
     }
 
     private void OnRightGoalEntered()
@@ -41,6 +48,7 @@ public class FootballController : MonoBehaviour
 
     private void IncreaseScore(ref int score, TMP_Text text)
     {
+        AudioManager.Instance.Play(Consts.Sounds.CONFETTI_SOUND);
         score++;
         text.text = score.ToString();
     }
@@ -48,9 +56,12 @@ public class FootballController : MonoBehaviour
     private IEnumerator ResetFootball()
     {
         yield return new WaitForSeconds(waitingSeconds);
+
+        AudioManager.Instance.Play(Consts.Sounds.WHISTLE_SOUND);
         footballRigidbody.isKinematic = true;
         footballTransform.position = startPosition;
         yield return null;
+
         footballRigidbody.isKinematic = false;
     }
 }
