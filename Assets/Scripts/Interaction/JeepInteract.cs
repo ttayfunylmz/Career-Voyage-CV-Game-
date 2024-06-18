@@ -8,8 +8,12 @@ public class JeepInteract : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             IInteractable interactable = GetInteractableObject();
-            interactable?.Interact();
-            AudioManager.Instance.Play(Consts.Sounds.KEYBOARD_CLICK_SOUND);
+            
+            if(interactable != null)
+            {
+                interactable.Interact();
+                AudioManager.Instance.Play(Consts.Sounds.KEYBOARD_CLICK_SOUND);
+            }
         }
     }
 

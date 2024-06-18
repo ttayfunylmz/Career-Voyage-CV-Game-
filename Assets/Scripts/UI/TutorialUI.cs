@@ -109,10 +109,10 @@ public class TutorialUI : MonoBehaviour
                 timer += Time.fixedDeltaTime;
                 rOutlineImage.fillAmount = timer / timerMax;
                 vehicle.SetIsFlipping(true);
-            }
-            else
-            {
-                vehicle.SetIsFlipping(false);
+                if(timer >= timerMax)
+                {
+                    vehicle.SetIsFlipping(false);
+                }
             }
         }
     }

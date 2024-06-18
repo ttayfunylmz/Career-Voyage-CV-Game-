@@ -17,6 +17,8 @@ public class InteractSpriteUpdater : MonoSingleton<InteractSpriteUpdater>
 
     public void OnKeyPressed()
     {
+        if(CameraAnimationController.Instance.IsInteractionEnding()) { return; }
+        
         keyBackgroundImage.DOColor(Color.red, animationDuration);
         keyBackgroundImage.sprite = keyShortSprite;
         eText.anchoredPosition = new Vector2(0, 22f);

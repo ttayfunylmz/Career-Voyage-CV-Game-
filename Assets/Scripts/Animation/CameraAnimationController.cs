@@ -9,25 +9,36 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
     [SerializeField] private ThirdPersonCameraController thirdPersonCameraController;
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject playerInteractionGameObject;
+    [SerializeField] private GameObject jeepGameObject;
 
     [Header("Settings")]
     [SerializeField] private float firstAnimationDuration = 0.75f;
     [SerializeField] private float animationDuration = 1f;
     [SerializeField] private float fadeDuration = 0.5f;
     [SerializeField] private Ease animationEase = Ease.OutBack;
+    [SerializeField] private bool isInteracting;
+    [SerializeField] private bool isInteractionEnding;
 
     private Vector3 targetRotationVector = new (0f, -90f, 0f);
     private Vector3 firstCameraPosition;
     private Vector3 firstCameraRotation;
-    private bool isInteracting;
     private Transform previousTargetTransformGlobal;
+    [SerializeField] private Rigidbody jeepRigidbody;
+
+    private void Start() 
+    {
+        jeepRigidbody = jeepGameObject.GetComponent<Rigidbody>();
+        this.enabled = false;
+    }
 
     public void OnInteraction(Transform targetTransform, Transform previousTargetTransform)
     {
+        if(isInteracting || isInteractionEnding) { return; }
+
         isInteracting = true;
 
         previousTargetTransformGlobal = previousTargetTransform;
-
+        jeepRigidbody.isKinematic = true;
         thirdPersonCameraController.enabled = false;
         playerController.enabled = false;
         playerInteractionGameObject.GetComponent<CanvasGroup>().DOFade(0f, fadeDuration);
@@ -39,7 +50,10 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
 
         mainCamera.transform.DOMove(previousTargetTransform.position, firstAnimationDuration).SetEase(Ease.Linear).OnComplete(() =>
         {
-            mainCamera.transform.DOMove(targetTransform.position, animationDuration).SetEase(animationEase);
+            mainCamera.transform.DOMove(targetTransform.position, animationDuration).SetEase(animationEase).OnComplete(() =>
+            {
+                isInteracting = false;
+            });
         });
 
         mainCamera.transform.DORotate(targetRotationVector, animationDuration).SetEase(animationEase);
@@ -47,24 +61,34 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
 
     public void OnInteractionEnd()
     {
+        if(isInteracting || isInteractionEnding) { return; }
+
+        isInteractionEnding = true;
+
         mainCamera.transform.DOMove(previousTargetTransformGlobal.position, firstAnimationDuration).SetEase(Ease.Linear).OnComplete(() =>
         {
             mainCamera.transform.DOMove(firstCameraPosition, animationDuration).SetEase(animationEase).OnComplete(() =>
             {
                 thirdPersonCameraController.enabled = true;
                 playerController.enabled = true;
+                jeepRigidbody.isKinematic = false;
                 playerInteractionGameObject.GetComponent<CanvasGroup>().DOFade(1f, fadeDuration);
+                isInteractionEnding = false;
+                this.enabled = false;
             });
-
-            mainCamera.transform.DORotate(firstCameraRotation, animationDuration).SetEase(animationEase);
         });
 
-        isInteracting = false;
+        mainCamera.transform.DORotate(firstCameraRotation, animationDuration).SetEase(animationEase);
     }
 
     public bool IsInteracting()
     {
         return isInteracting;
+    }
+
+    public bool IsInteractionEnding()
+    {
+        return isInteractionEnding;
     }
 
 }

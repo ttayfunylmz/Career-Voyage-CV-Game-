@@ -12,7 +12,9 @@ public class FrameInteractable : MonoBehaviour, IInteractable
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && CameraAnimationController.Instance.IsInteracting())
+        if(Input.GetKeyDown(KeyCode.Escape) 
+            && !CameraAnimationController.Instance.IsInteracting() 
+            && CameraAnimationController.Instance.enabled)
         {
             CameraAnimationController.Instance.OnInteractionEnd();
             InteractSpriteUpdater.Instance.OnKeyReleased();
@@ -21,6 +23,7 @@ public class FrameInteractable : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        CameraAnimationController.Instance.enabled = true;
         CameraAnimationController.Instance.OnInteraction(targetTransform, previousTargetTransform);
         InteractSpriteUpdater.Instance.OnKeyPressed();
     }
