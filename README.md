@@ -2,9 +2,8 @@
 <h4 align="center">Experience my CV through this interactive Jeep Driving Simulator game!</h4>
 
 <div align="center">
-  <img src="https://github.com/ttayfunylmz/Career-Voyage-CV-Game-/assets/76071161/96f8f43c-8315-4dd7-96ec-68cc3a6b5cad" width="250" alt="SkinnyDev">
+  <img src="https://github.com/ttayfunylmz/Career-Voyage-CV-Game-/assets/76071161/42949ce2-b2ca-4232-9758-37ed3197cc0a" width="1000" alt="SkinnyDev">
 </div>
-
 
 <h2 align="">🐧 Features in This Game 🐧</h2>
 
