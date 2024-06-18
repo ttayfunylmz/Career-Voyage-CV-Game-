@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Sounds")]
     public Sound[] Sounds;
-
+    
     private void Awake() 
     {
         Instance = this;

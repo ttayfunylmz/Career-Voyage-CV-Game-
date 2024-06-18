@@ -40,7 +40,6 @@ namespace ArcadeVehicleController
         private float steerInput;
         private float accelerateInput;
 
-
         public VehicleSettings Settings => vehicleSettings;
         public Vector3 Forward => vehicleTransform.forward;
         public Vector3 Velocity => vehicleRigidbody.velocity;
