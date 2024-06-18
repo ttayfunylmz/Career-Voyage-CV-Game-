@@ -5,7 +5,7 @@
   <img src="https://github.com/ttayfunylmz/Career-Voyage-CV-Game-/assets/76071161/42949ce2-b2ca-4232-9758-37ed3197cc0a" width="1000" alt="SkinnyDev">
 </div>
 
-<h2 align="">🐧 Features in This Game 🐧</h2>
+<h2 align="center">🐧 Features in This Game 🐧</h2>
 
 <h4 align="center">🚗 <strong>Career Voyage:</strong> is a Jeep Driving Simulator game where you explore my CV and have fun.</h4>
 <h4 align="center">2️⃣ The game has 2 sides:</h4>
