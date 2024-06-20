@@ -126,14 +126,6 @@ MonoBehaviour:
     Loop: 0
     playOnAwake: 0
   - Source: {fileID: 0}
-    AudioClip: {fileID: 8300000, guid: 0ecf3fc7fe2b1d743a5873495cbfb02e, type: 3}
-    Name: BrickSound
-    Volume: 1
-    Pitch: 1
-    Mute: 0
-    Loop: 0
-    playOnAwake: 0
-  - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: 0650d74a30410584d85c6564a3d88481, type: 3}
     Name: WhistleSound
     Volume: 0.2
@@ -184,6 +176,94 @@ MonoBehaviour:
   - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: 161b15cb8038ab64abd32ba94cc8ff88, type: 3}
     Name: CarFix2Sound
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 08c22caaec7bf3640bb0690363b0c139, type: 3}
+    Name: BrickSound1
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: f8c0e58fc2ee8d74e994c56642d25f87, type: 3}
+    Name: BrickSound2
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 3a6271121dd66cf4ca5fc01cb10ceda1, type: 3}
+    Name: BrickSound3
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: a34d432ba19a0b24492272a9eeb47563, type: 3}
+    Name: BrickSound4
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: ac48ebe79ca1b6c438e48d9af79147a9, type: 3}
+    Name: BrickSound5
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: db9edb9302d5b974dbe2ce614f09be37, type: 3}
+    Name: BrickSound6
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 00e0428f63d6f5b42acea6b16e989ae1, type: 3}
+    Name: BrickSound7
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: e49138bd51bf2c84992e30067a40dc9c, type: 3}
+    Name: BrickSound8
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: e49138bd51bf2c84992e30067a40dc9c, type: 3}
+    Name: BrickSound8
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 4999a86fdd3766f4081b217af0b51040, type: 3}
+    Name: BushSound
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: f1690d3764193e74daaa9e65419af1f5, type: 3}
+    Name: StoneSound
     Volume: 0.7
     Pitch: 1
     Mute: 0

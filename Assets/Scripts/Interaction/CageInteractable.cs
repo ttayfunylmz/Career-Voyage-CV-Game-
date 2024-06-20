@@ -11,9 +11,12 @@ public class CageInteractable : MonoBehaviour, IInteractable
     [SerializeField] private float animationDuration = 2f;
 
     private Vector3 targetRotation = new Vector3(0f, 120f, 0f);
+    private bool isInteracted;
 
     public void Interact()
     {
+        if(isInteracted) { return; }
+        
         AnimateFence();
         StartCoroutine(InteractSpriteUpdater.Instance.OnKeyReleasedCoroutine());
     }
@@ -22,6 +25,7 @@ public class CageInteractable : MonoBehaviour, IInteractable
     {
         AudioManager.Instance.Play(Consts.Sounds.FENCE_OPENING_SOUND);
         fenceParent.DORotate(targetRotation, animationDuration);
+        isInteracted = true;
     }
 
     public string GetInteractText()

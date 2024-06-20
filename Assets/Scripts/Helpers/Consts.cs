@@ -28,11 +28,24 @@ public class Consts
         public const string HORN_SOUND = "HornSound";
         public const string KEYBOARD_CLICK_SOUND = "KeyboardClickSound";
         public const string PHOTOSHOOT_SOUND = "PhotoShootSound";
-        public const string BRICK_SOUND = "BrickSound";
         public const string WHISTLE_SOUND = "WhistleSound";
         public const string FOOTBALL_SOUND = "FootballSound";
         public const string BASKETBALL_SOUND = "BasketballSound";
         public const string CAR_FIX_1_SOUND = "CarFix1Sound";
         public const string CAR_FIX_2_SOUND = "CarFix2Sound";
+        public const string BUSH_SOUND = "BushSound";
+        public const string STONE_SOUND = "StoneSound";
+
+        public const string BRICK_SOUND1 = "BrickSound1";
+        public const string BRICK_SOUND2 = "BrickSound2";
+        public const string BRICK_SOUND3 = "BrickSound3";
+        public const string BRICK_SOUND4 = "BrickSound4";
+        public const string BRICK_SOUND5 = "BrickSound5";
+        public const string BRICK_SOUND6 = "BrickSound6";
+        public const string BRICK_SOUND7 = "BrickSound7";
+        public const string BRICK_SOUND8 = "BrickSound8";
+        public const string BRICK_SOUND9 = "BrickSound9";
+        public const string BRICK_SOUND10 = "BrickSound10";
+
     }
 }
