@@ -31,6 +31,7 @@ namespace ArcadeVehicleController
         [SerializeField] private float upwardMovementDistance = 2f;
         [SerializeField] private Ease animationEase;
         [SerializeField] private bool isFlipping;
+        [SerializeField] private bool isFlippingCompleted;
 
         private Transform vehicleTransform;
         private BoxCollider vehicleCollider;
@@ -354,12 +355,15 @@ namespace ArcadeVehicleController
 
         private void FixTheVehicle()
         {
-            if (isFlipping) { return; }
+            if (isFlipping 
+            || CameraAnimationController.Instance.IsInteracting()
+            || CameraAnimationController.Instance.IsInteractionEnding()) { return; }
 
             vehicleCollider.enabled = false;
             vehicleRigidbody.useGravity = false;
             vehicleRigidbody.isKinematic = true;
             isFlipping = true;
+            isFlippingCompleted = true;
 
             AudioManager.Instance.Play(Consts.Sounds.CAR_FIX_1_SOUND);
             transform.DOMove(new Vector3(transform.position.x, transform.position.y + upwardMovementDistance, transform.position.z), animationDuration)
@@ -375,6 +379,7 @@ namespace ArcadeVehicleController
                                 vehicleCollider.enabled = true;
                                 vehicleRigidbody.useGravity = true;
                                 vehicleRigidbody.isKinematic = false;
+                                isFlippingCompleted = false;
                                 OnVehicleFix?.Invoke();
                             });
                 })
@@ -389,6 +394,11 @@ namespace ArcadeVehicleController
         public bool GetIsFlipping()
         {
             return isFlipping;
+        }
+
+        public bool GetIsFlippingCompleted()
+        {
+            return isFlippingCompleted;
         }
 
 #if UNITY_EDITOR

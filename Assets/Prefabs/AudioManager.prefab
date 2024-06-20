@@ -269,3 +269,11 @@ MonoBehaviour:
     Mute: 0
     Loop: 0
     playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 576ff28ab6b309c4baf7a24b848107f0, type: 3}
+    Name: WireSound
+    Volume: 1
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0

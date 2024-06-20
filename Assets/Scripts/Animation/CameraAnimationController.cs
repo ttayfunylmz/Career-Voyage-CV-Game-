@@ -23,7 +23,7 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
     private Vector3 firstCameraPosition;
     private Vector3 firstCameraRotation;
     private Transform previousTargetTransformGlobal;
-    [SerializeField] private Rigidbody jeepRigidbody;
+    private Rigidbody jeepRigidbody;
 
     private void Start() 
     {

@@ -1,15 +1,23 @@
 using System.Collections.Generic;
+using ArcadeVehicleController;
 using UnityEngine;
 
 public class JeepInteract : MonoBehaviour
 {
+    private Vehicle vehicle;
+
+    private void Awake() 
+    {
+        vehicle = GetComponent<Vehicle>();    
+    }
+
     private void Update() 
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
             IInteractable interactable = GetInteractableObject();
             
-            if(interactable != null)
+            if(interactable != null && !vehicle.GetIsFlippingCompleted())
             {
                 interactable.Interact();
                 AudioManager.Instance.Play(Consts.Sounds.KEYBOARD_CLICK_SOUND);

@@ -35,6 +35,7 @@ public class Consts
         public const string CAR_FIX_2_SOUND = "CarFix2Sound";
         public const string BUSH_SOUND = "BushSound";
         public const string STONE_SOUND = "StoneSound";
+        public const string WIRE_SOUND = "WireSound";
 
         public const string BRICK_SOUND1 = "BrickSound1";
         public const string BRICK_SOUND2 = "BrickSound2";
