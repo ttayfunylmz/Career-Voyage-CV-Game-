@@ -361,10 +361,12 @@ namespace ArcadeVehicleController
             vehicleRigidbody.isKinematic = true;
             isFlipping = true;
 
+            AudioManager.Instance.Play(Consts.Sounds.CAR_FIX_1_SOUND);
             transform.DOMove(new Vector3(transform.position.x, transform.position.y + upwardMovementDistance, transform.position.z), animationDuration)
                 .SetEase(animationEase)
                 .OnComplete(() =>
                 {
+                    AudioManager.Instance.Play(Consts.Sounds.CAR_FIX_2_SOUND);
                     transform.DORotate(new Vector3(0f, transform.eulerAngles.y, 0f), animationDuration)
                             .SetEase(animationEase).SetUpdate(UpdateType.Fixed, false)
                             .OnComplete(() =>

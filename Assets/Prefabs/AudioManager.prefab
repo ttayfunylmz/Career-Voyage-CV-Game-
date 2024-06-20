@@ -46,9 +46,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sounds:
   - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 11c8b772d85e10d41b437de88ff7219c, type: 3}
+    Name: HornSound
+    Volume: 0.5
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: 54234e22376fecc49915aae23a28852f, type: 3}
     Name: ButtonClickSound
-    Volume: 1
+    Volume: 0.7
     Pitch: 1
     Mute: 0
     Loop: 0
@@ -56,14 +64,6 @@ MonoBehaviour:
   - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: 32c089096ffbf7f4cb349e721bd28b06, type: 3}
     Name: ButtonHoverSound
-    Volume: 1
-    Pitch: 1
-    Mute: 0
-    Loop: 0
-    playOnAwake: 0
-  - Source: {fileID: 0}
-    AudioClip: {fileID: 8300000, guid: fa9b55a8b56589f4199621553b4cfff9, type: 3}
-    Name: CameraTransitionSound
     Volume: 1
     Pitch: 1
     Mute: 0
@@ -96,23 +96,15 @@ MonoBehaviour:
   - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: adc794540d5285f47b5e4d8c06348698, type: 3}
     Name: ConfettiSound
-    Volume: 1
+    Volume: 0.3
     Pitch: 1
     Mute: 0
     Loop: 0
     playOnAwake: 0
   - Source: {fileID: 0}
-    AudioClip: {fileID: 8300000, guid: 9dbee2dfff99e2d4ebb81457775ba326, type: 3}
+    AudioClip: {fileID: 8300000, guid: e5fce449fdf246f47b8b729393ff70f6, type: 3}
     Name: FenceOpeningSound
-    Volume: 1
-    Pitch: 1
-    Mute: 0
-    Loop: 0
-    playOnAwake: 0
-  - Source: {fileID: 0}
-    AudioClip: {fileID: 8300000, guid: 11c8b772d85e10d41b437de88ff7219c, type: 3}
-    Name: HornSound
-    Volume: 1
+    Volume: 0.8
     Pitch: 1
     Mute: 0
     Loop: 0
@@ -120,7 +112,7 @@ MonoBehaviour:
   - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: 2af048b0f1e97ff42a4a2333723a3ddd, type: 3}
     Name: KeyboardClickSound
-    Volume: 1
+    Volume: 0.5
     Pitch: 1
     Mute: 0
     Loop: 0
@@ -144,7 +136,55 @@ MonoBehaviour:
   - Source: {fileID: 0}
     AudioClip: {fileID: 8300000, guid: 0650d74a30410584d85c6564a3d88481, type: 3}
     Name: WhistleSound
-    Volume: 1
+    Volume: 0.2
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: fa9b55a8b56589f4199621553b4cfff9, type: 3}
+    Name: CameraTransitionSound
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 8e62d02a554161341b77dec349fad5a4, type: 3}
+    Name: CameraTransitionSound2
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 2319e48769402464d8b00fcda4950db5, type: 3}
+    Name: FootballSound
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: f7412ccf6952a46408343cd28aeb4520, type: 3}
+    Name: BasketballSound
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 166a917016d894f49af4a32657b41151, type: 3}
+    Name: CarFix1Sound
+    Volume: 0.7
+    Pitch: 1
+    Mute: 0
+    Loop: 0
+    playOnAwake: 0
+  - Source: {fileID: 0}
+    AudioClip: {fileID: 8300000, guid: 161b15cb8038ab64abd32ba94cc8ff88, type: 3}
+    Name: CarFix2Sound
+    Volume: 0.7
     Pitch: 1
     Mute: 0
     Loop: 0

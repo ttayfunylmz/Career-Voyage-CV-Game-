@@ -24,6 +24,7 @@ public class TitleUI : MonoBehaviour
 
     private void AnimateTexts()
     {
+        AudioManager.Instance.Play(Consts.Sounds.CAMERA_TRANSITION_SOUND);
         textsToAnimateTransform.DOAnchorPosY(0f, moveDuration).SetEase(Ease.OutBack).OnComplete(() =>
         {
             Invoke(nameof(ResetTexts), waitingDuration);
@@ -32,6 +33,7 @@ public class TitleUI : MonoBehaviour
 
     private void ResetTexts()
     {
-        textsToAnimateTransform.DOAnchorPosY(startPosition.y, moveDuration).SetEase(Ease.InBack);
+        AudioManager.Instance.Play(Consts.Sounds.CAMERA_TRANSITION_SOUND2);
+        textsToAnimateTransform.DOAnchorPosY(startPosition.y, moveDuration).SetEase(Ease.OutQuart);
     }
 }

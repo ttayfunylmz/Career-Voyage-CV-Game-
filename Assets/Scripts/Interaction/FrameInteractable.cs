@@ -16,6 +16,7 @@ public class FrameInteractable : MonoBehaviour, IInteractable
             && !CameraAnimationController.Instance.IsInteracting() 
             && CameraAnimationController.Instance.enabled)
         {
+            AudioManager.Instance.Play(Consts.Sounds.KEYBOARD_CLICK_SOUND);
             CameraAnimationController.Instance.OnInteractionEnd();
             InteractSpriteUpdater.Instance.OnKeyReleased();
         }

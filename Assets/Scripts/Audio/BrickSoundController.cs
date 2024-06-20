@@ -6,7 +6,7 @@ public class BrickSoundController : MonoBehaviour
 {
     private void OnCollisionEnter(Collision other) 
     {
-        if(other.gameObject.tag == Consts.Tags.PLAYER)
+        if(other.gameObject.CompareTag(Consts.Tags.PLAYER))
         {
             Debug.Log("Player!");
             AudioManager.Instance.Play(Consts.Sounds.BRICK_SOUND);

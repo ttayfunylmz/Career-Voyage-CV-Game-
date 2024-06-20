@@ -50,6 +50,7 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
 
         mainCamera.transform.DOMove(previousTargetTransform.position, firstAnimationDuration).SetEase(Ease.Linear).OnComplete(() =>
         {
+            AudioManager.Instance.Play(Consts.Sounds.CAMERA_TRANSITION_SOUND2);
             mainCamera.transform.DOMove(targetTransform.position, animationDuration).SetEase(animationEase).OnComplete(() =>
             {
                 isInteracting = false;
@@ -65,8 +66,11 @@ public class CameraAnimationController : MonoSingleton<CameraAnimationController
 
         isInteractionEnding = true;
 
+        AudioManager.Instance.Play(Consts.Sounds.CAMERA_TRANSITION_SOUND);
+
         mainCamera.transform.DOMove(previousTargetTransformGlobal.position, firstAnimationDuration).SetEase(Ease.Linear).OnComplete(() =>
         {
+            AudioManager.Instance.Play(Consts.Sounds.CAMERA_TRANSITION_SOUND2);
             mainCamera.transform.DOMove(firstCameraPosition, animationDuration).SetEase(animationEase).OnComplete(() =>
             {
                 thirdPersonCameraController.enabled = true;

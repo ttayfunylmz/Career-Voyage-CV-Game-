@@ -15,41 +15,53 @@ public class AudioManager : MonoBehaviour
 
         foreach (Sound s in Sounds)
         {
-          s.Source = gameObject.AddComponent<AudioSource>();
-          s.Source.clip = s.AudioClip;
-          s.Source.volume = s.Volume;
-          s.Source.pitch = s.Pitch;
-          s.Source.mute = s.Mute;
-          s.Source.loop = s.Loop; 
-          s.Source.playOnAwake = s.playOnAwake;
+            s.Source = gameObject.AddComponent<AudioSource>();
+            s.Source.clip = s.AudioClip;
+            s.Source.volume = s.Volume;
+            s.Source.pitch = s.Pitch;
+            s.Source.mute = s.Mute;
+            s.Source.loop = s.Loop; 
+            s.Source.playOnAwake = s.playOnAwake;
         }
     }
 
-    public void Play(String Name)
+    public void Play(string name)
     {
-      Sound s = Array.Find(Sounds, Sound => Sound.Name == Name);
-      if(s == null) return;    
-        s.Source.Play();            
+        Sound s = Array.Find(Sounds, sound => sound.Name == name);
+        if (s == null)
+        {
+            Debug.LogWarning($"Sound with name {name} not found in AudioManager.");
+            return;
+        }
+
+        s.Source.Play();
     }
 
-    public void Stop(String Name)
+    public void Stop(string name)
     {
-        Sound s = Array.Find(Sounds, Sound => Sound.Name == Name);
-        if (s == null) return;     
-            s.Source.Stop();                   
+        Sound s = Array.Find(Sounds, sound => sound.Name == name);
+        if (s == null)
+        {
+            Debug.LogWarning($"Sound with name {name} not found in AudioManager.");
+            return;
+        }
+
+        s.Source.Stop();
     }
 
-    public void SoundEffectsActive(string Name)
+    public void MuteAllSoundEffects()
     {
-        Sound s = Array.Find(Sounds, Sound => Sound.Name == Name);
-        if (s == null) return;
-        s.Source.mute = false;
+        foreach (Sound s in Sounds)
+        {
+            s.Source.mute = true;
+        }
     }
-   
-    public void SoundEffectsPassive(string Name)
+
+    public void UnmuteAllSoundEffects()
     {
-       Sound s = Array.Find(Sounds, Sound => Sound.Name == Name);
-       if(s == null) return;
-        s.Source.mute = true;       
+        foreach (Sound s in Sounds)
+        {
+            s.Source.mute = false;
+        }
     }
 }
