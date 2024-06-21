@@ -16,9 +16,7 @@ public class BrickSoundController : MonoBehaviour
             Consts.Sounds.BRICK_SOUND5,
             Consts.Sounds.BRICK_SOUND6,
             Consts.Sounds.BRICK_SOUND7,
-            Consts.Sounds.BRICK_SOUND8,
-            Consts.Sounds.BRICK_SOUND9,
-            Consts.Sounds.BRICK_SOUND10
+            Consts.Sounds.BRICK_SOUND8
         };
     }
 

@@ -25,6 +25,7 @@ namespace ArcadeVehicleController
 
         [Header("References")]
         [SerializeField] private VehicleSettings vehicleSettings;
+        
 
         [Header("Settings")]
         [SerializeField] private float animationDuration = 1f;
@@ -33,6 +34,7 @@ namespace ArcadeVehicleController
         [SerializeField] private bool isFlipping;
         [SerializeField] private bool isFlippingCompleted;
 
+        private PhotoshootArea photoshootArea;
         private Transform vehicleTransform;
         private BoxCollider vehicleCollider;
         private Rigidbody vehicleRigidbody;
@@ -47,6 +49,8 @@ namespace ArcadeVehicleController
 
         private void Awake()
         {
+            photoshootArea = GetComponent<PhotoshootArea>();
+
             vehicleTransform = transform;
             InitializeCollider();
             InitializeBody();
@@ -358,6 +362,8 @@ namespace ArcadeVehicleController
             if (isFlipping 
             || CameraAnimationController.Instance.IsInteracting()
             || CameraAnimationController.Instance.IsInteractionEnding()) { return; }
+
+            if(photoshootArea.GetIsPhotoshooting()) { return; }
 
             vehicleCollider.enabled = false;
             vehicleRigidbody.useGravity = false;

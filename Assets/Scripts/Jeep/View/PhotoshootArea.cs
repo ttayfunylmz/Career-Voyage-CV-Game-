@@ -14,12 +14,15 @@ public class PhotoshootArea : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float waitingSeconds;
 
+    private bool isPhotoshooting;
+
     private void OnTriggerEnter(Collider other) 
     {
         if(other.CompareTag(Consts.Tags.PHOTOSHOOT_AREA))
         {
             SetCameras(photoshootCamera, mainCamera);
             StartCoroutine(OnPhotoshootCoroutine());
+            isPhotoshooting = true;
         }    
     }
 
@@ -28,6 +31,7 @@ public class PhotoshootArea : MonoBehaviour
         if(other.CompareTag(Consts.Tags.PHOTOSHOOT_AREA))
         {
             SetCameras(mainCamera, photoshootCamera);
+            isPhotoshooting = false;
         }   
     }
 
@@ -41,5 +45,10 @@ public class PhotoshootArea : MonoBehaviour
     {
         yield return new WaitForSeconds(waitingSeconds);
         OnPhotoshoot?.Invoke();
+    }
+
+    public bool GetIsPhotoshooting()
+    {
+        return isPhotoshooting;
     }
 }
