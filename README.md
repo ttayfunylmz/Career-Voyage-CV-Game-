@@ -1,5 +1,6 @@
 <h2 align="center">🚗 Career Voyage 🚗</h2>
 <h4 align="center">Experience my CV through this interactive Jeep Driving Simulator game!</h4>
+<h4 align="center">You can play the game through my <a href="http://unityskinnydev.com/">website.</a></h4>
 
 <div align="center">
   <img src="https://github.com/ttayfunylmz/Career-Voyage-CV-Game-/assets/76071161/42949ce2-b2ca-4232-9758-37ed3197cc0a" width="1000" alt="SkinnyDev">
